@@ -12,6 +12,12 @@ So instead of trying to do everything alone, a **personal assistant agent** can 
 
 This repo implements the **integration stack** for that vision: pay-per-request flows with the x402 protocol, the [Thirdweb](https://thirdweb.com/) facilitator, and [OpenClaw](https://openclaw.ai/) agents. The [x402](https://x402.org/) protocol maps HTTP **402 Payment Required** to on-chain settlement so APIs and agents can charge per call without traditional API keys or accounts.
 
+## Execution proof (demo)
+
+Recorded walkthrough of the flow in action:
+
+**[Watch on Loom →](https://www.loom.com/share/685f7bba8ffd4157b7757ff76f0dd869)**
+
 ## Component diagram
 
 <p align="center">

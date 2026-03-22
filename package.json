@@ -2,8 +2,8 @@
   "name": "x402-agentic",
   "version": "1.0.0",
   "scripts": {
-    "server": "tsx server.ts",
-    "client": "tsx client.ts",
+    "server": "tsx middleware/server.ts",
+    "client": "tsx middleware/client.ts",
     "dev": "tsx watch server.ts"
   },
   "dependencies": {
