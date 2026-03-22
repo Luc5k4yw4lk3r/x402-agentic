@@ -22,6 +22,7 @@ const client = createThirdwebClient({ secretKey: THIRDWEB_SECRET_KEY });
 const thirdwebFacilitator = facilitator({
   client,
   serverWalletAddress: SERVER_WALLET_ADDRESS,
+  waitUntil: "simulated"
 });
 
 const app = express();

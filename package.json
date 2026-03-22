@@ -7,9 +7,11 @@
     "dev": "tsx watch server.ts"
   },
   "dependencies": {
+    "@x402/evm": "^2.7.0",
+    "@x402/fetch": "^2.7.0",
+    "dotenv": "^16.4.7",
     "express": "^5.1.0",
-    "thirdweb": "^5.101.0",
-    "dotenv": "^16.4.7"
+    "thirdweb": "^5.101.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.2",
