@@ -1,7 +1,7 @@
 import "dotenv/config";
 import express from "express";
 import { createThirdwebClient } from "thirdweb";
-import { avalancheFuji } from "thirdweb/chains";
+import { baseSepolia } from "thirdweb/chains";
 import { facilitator, settlePayment } from "thirdweb/x402";
 
 const {
@@ -52,7 +52,7 @@ app.get("/api/premium", async (req, res) => {
     method: "GET",
     paymentData: paymentData ?? null,
     payTo: SERVER_WALLET_ADDRESS,
-    network: avalancheFuji,
+    network: baseSepolia,
     price: "$0.01",
     facilitator: thirdwebFacilitator,
     routeConfig: {
@@ -83,7 +83,7 @@ app.get("/api/joke", async (req, res) => {
     method: "GET",
     paymentData: paymentData ?? null,
     payTo: SERVER_WALLET_ADDRESS,
-    network: avalancheFuji,
+    network: baseSepolia,
     price: "$0.001",
     facilitator: thirdwebFacilitator,
     routeConfig: {

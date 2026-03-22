@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { createThirdwebClient } from "thirdweb";
-import { avalancheFuji } from "thirdweb/chains";
+import { baseSepolia } from "thirdweb/chains";
 import {
   privateKeyToAccount,
   createWalletAdapter,
@@ -20,7 +20,7 @@ const account = privateKeyToAccount({ client, privateKey: CLIENT_PRIVATE_KEY });
 async function main() {
   const wallet = createWalletAdapter({
     adaptedAccount: account,
-    chain: avalancheFuji,
+    chain: baseSepolia,
     client,
     onDisconnect: async () => {},
     switchChain: async () => {},
