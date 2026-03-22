@@ -1,23 +1,31 @@
-# x402-agentic
+# **NutrIA -** agentic economy
 
-Pay-per-request AI agents powered by the [x402](https://x402.org/) payment protocol, [Thirdweb](https://thirdweb.com/) facilitator, and [OpenClaw](https://openclaw.ai/).
+## What this project is about
 
-The x402 protocol turns the HTTP 402 (Payment Required) status code into an on-chain payment layer for APIs, enabling AI agents to pay each other for services in real-time.
+**NutrIA** is a nutrition agent marketplace powered by **EIP-8004** and **[x402](https://x402.org/)**.
+
+It lets specialized nutrition agents **register** with standardized metadata, makes them **discoverable** by other agents, enables **direct machine-to-machine payments**, and supports **reviews** so clients can identify trusted providers.
+
+So instead of trying to do everything alone, a **personal assistant agent** can find the right nutrition agent, **pay** it, **receive** the result, and deliver **personalized recommendations** in seconds.
+
+### How this repository fits in
+
+This repo implements the **integration stack** for that vision: pay-per-request flows with the x402 protocol, the [Thirdweb](https://thirdweb.com/) facilitator, and [OpenClaw](https://openclaw.ai/) agents. The [x402](https://x402.org/) protocol maps HTTP **402 Payment Required** to on-chain settlement so APIs and agents can charge per call without traditional API keys or accounts.
 
 ## Component diagram
 
-<p align="center">
-  <img src="docs/component-diagram.png" alt="Architecture: Client Agent and Nutritionist Agent (OpenClaw), Marketplace ERC-8004, x402 middleware, Thirdweb Facilitator, Avalanche" width="720" />
-</p>
 
-<p align="center"><em>High-level components: OpenClaw agents, ERC-8004 marketplace, x402 payment validation, facilitator, and Avalanche.</em></p>
 
-| Color | Category |
-|-------|----------|
-| Yellow | AI Skills |
-| Orange | Process |
-| Red / Pink | External Service / Smart Contract |
-| Blue / Purple | Agent internals |
+*High-level components: OpenClaw agents, ERC-8004 marketplace, x402 payment validation, facilitator, and Avalanche.*
+
+
+| Color         | Category                          |
+| ------------- | --------------------------------- |
+| Yellow        | AI Skills                         |
+| Orange        | Process                           |
+| Red / Pink    | External Service / Smart Contract |
+| Blue / Purple | Agent internals                   |
+
 
 ### Key components
 
@@ -52,11 +60,13 @@ x402-agentic/
 └── README.md
 ```
 
-| Directory | Purpose |
-|-----------|---------|
-| `x402/` | Standalone x402 implementation for testing the payment flow (server + client). |
+
+| Directory     | Purpose                                                                                |
+| ------------- | -------------------------------------------------------------------------------------- |
+| `x402/`       | Standalone x402 implementation for testing the payment flow (server + client).         |
 | `middleware/` | OpenClaw middleware that validates x402 payments before forwarding requests to agents. |
-| `skills/` | OpenClaw skills that agents can use (e.g. AI nutritionist, hello-world demo). |
+| `skills/`     | OpenClaw skills that agents can use (e.g. AI nutritionist, hello-world demo).          |
+
 
 ## Prerequisites
 
@@ -104,6 +114,7 @@ curl -v http://localhost:3000/api/joke
 ```
 
 The 402 response includes:
+
 - `payment-required` header with payment details
 - JSON body with requirements: network, token, amount, destination wallet
 
@@ -118,6 +129,7 @@ npm run client -- /api/joke
 ```
 
 The client automatically:
+
 1. Sends the initial request
 2. Receives the 402 with payment requirements
 3. Signs the USDC payment authorization with your wallet
@@ -206,11 +218,14 @@ sequenceDiagram
     Note right of Agent: Reutiliza key. Salta Steps 1-2.
 ```
 
+
+
 ## Roadmap
 
-- [ ] Add `upto` payment scheme for dynamic pricing
-- [ ] Integrate with AI model (pay-per-inference)
-- [ ] Transaction dashboard
-- [ ] Migrate to Avalanche mainnet with real USDC
-- [ ] Add more endpoints with different price tiers
-- [ ] Reusable middleware for arbitrary OpenClaw agents
+- Add `upto` payment scheme for dynamic pricing
+- Integrate with AI model (pay-per-inference)
+- Transaction dashboard
+- Migrate to Avalanche mainnet with real USDC
+- Add more endpoints with different price tiers
+- Reusable middleware for arbitrary OpenClaw agents
+
