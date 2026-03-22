@@ -1,0 +1,20 @@
+{
+  "name": "x402-agentic",
+  "version": "1.0.0",
+  "scripts": {
+    "server": "tsx server.ts",
+    "client": "tsx client.ts",
+    "dev": "tsx watch server.ts"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "thirdweb": "^5.101.0",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.3",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
