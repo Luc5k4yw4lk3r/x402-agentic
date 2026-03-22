@@ -14,7 +14,9 @@ This repo implements the **integration stack** for that vision: pay-per-request 
 
 ## Component diagram
 
-
+<p align="center">
+  <img src="docs/component-diagram.png" alt="Component diagram: Client Agent and Nutritionist Agent (OpenClaw), Marketplace ERC-8004, x402 middleware, Thirdweb Facilitator, Avalanche" width="720" />
+</p>
 
 *High-level components: OpenClaw agents, ERC-8004 marketplace, x402 payment validation, facilitator, and Avalanche.*
 
